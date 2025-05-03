@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'final_project'
+
 ]
 
 MIDDLEWARE = [
@@ -121,3 +123,16 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# #Create a user model for AUTH -- project
+# AUTH_USER_MODEL = 'accounts.CustomUser'
+#
+#
+# tell Django where to go after login/logout
+LOGIN_REDIRECT_URL = '/login/'  # where to go after login
+LOGOUT_REDIRECT_URL = '/'     # where to go after logout
+LOGIN_URL = '/login/'         # if not logged in, redirect here
+
+
+
