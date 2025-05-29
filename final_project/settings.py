@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'final_project',
-    'tailwind',
+
 ]
 
 MIDDLEWARE = [
@@ -133,6 +133,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/login/'  # where to go after login
 LOGOUT_REDIRECT_URL = '/'     # where to go after logout
 LOGIN_URL = '/login/'         # if not logged in, redirect here
-
 
 

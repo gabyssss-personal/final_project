@@ -27,14 +27,17 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path ('', home_view, name='home'),
+    #path ('', home_view, name='home'),
+    path ('', views.recipe_list, name='home'),
     path ('login/', custom_login, name='login'),
     path ('register/', register, name='register'),
     path ('logout/', custom_logout, name='logout'),
     path('', views.recipe_list, name='recipe_list'),
+    path('chronos', views.chronos, name='chronos' ),
     path('create/', views.recipe_create, name='recipe_create'),
     path('<int:pk>/edit/', views.recipe_edit, name='recipe_edit'),
     path('<int:pk>/delete/', views.recipe_delete, name='recipe_delete'),
+
 
     # path('login/', login_view, name='login'),
     # path('logout/', logout_view, name='logout'),

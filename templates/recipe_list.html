@@ -1,10 +1,105 @@
-<h1>All Recipes</h1>
+<h1 style="  text-align: left;
+  font-size: 2.5 em;
+  background-color: #999999
+  margin-bottom: 0px;
+  color: #ffff;
+  text-align: left;
+  padding-bottom: 20 px;
+  padding: 20px 40px;
+    width: 100%;          /* scales on smaller screens */
+    margin: 0 auto;      /* centers the container */
+    padding: 20 px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    border-radius: 0;
+    background-color: #999999;  /* Solid background inside the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    text-align: left;">Food Recipes</h1>
+
+<body style="background-color: #f5f5dc;">
+
 {% for recipe in recipes %}
-    <h2>{{ recipe.title }}</h2>
-    <p>{{ recipe.description }}</p>
+    <h2 style="
+    width: 50%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease;
+    text-align: left;" >{{ recipe.title }} </h2>
+    <p style="background-color: #fff;
+     width: 40%;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease;"><strong>Description:</strong>{{ recipe.description }}</p>
+    <p style="background-color: #fff;
+     width: 30%;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease;"><strong>Cooking Time:</strong>{{ recipe.cooking_time }} mins</p>
+    <p style="background-color: #fff;
+     width: 25%;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease;"><strong>Record Date:</strong>{{ recipe.created_at }} </p>
     {% if user == recipe.author %}
         <a href="{% url 'recipe_edit' recipe.id %}">Edit</a>
         <a href="{% url 'recipe_delete' recipe.id %}">Delete</a>
     {% endif %}
 {% endfor %}
-<a href="{% url 'recipe_create' %}">Create New Recipe</a>
+
+<div style="margin-bottom: 2em;"></div>
+
+<a href="{% url 'recipe_create' %}">
+  <button style="
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  ">
+    Create New Recipe
+  </button>
+</a>
+
+<div style="margin-bottom: 2em;"></div>
+
+<a href="{% url 'chronos' %}">
+  <button style="
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  ">
+    Sort by Creation Data
+  </button>
+</a>
+
+<a href="{% url 'home' %}">
+  <button style="
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  ">
+    Sort by Alphabetical Order
+  </button>
+</a>

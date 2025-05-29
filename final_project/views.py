@@ -10,10 +10,9 @@ from django.contrib.auth.decorators import login_required# Create your views her
 
 # restrict access through deco. for auth users
 from django.contrib.auth.decorators import login_required
-from final_project.models import Recipe
-
 from .models import Recipe
 from .forms import RecipeForm
+from django.db.models.functions import Lower
 
 
 @login_required
@@ -29,7 +28,8 @@ def custom_login(request):
         form = AuthenticationForm(data=request.POST)
         if form.is_valid():
             login(request, form.get_user())
-            return redirect('home')
+            #return redirect('home')
+            return redirect('recipe_list')
     else:
             form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})
@@ -59,7 +59,15 @@ def home_view(request):
 
 
 # review
+# alphabetically sorted + case-insensitive
 def recipe_list(request):
+    # Casse Insensitive order
+    recipes = Recipe.objects.all().order_by(Lower('title'))
+    return render(request, "recipe_list.html", {'recipes': recipes})
+
+#sorted by created date
+def chronos(request):
+    # Casse Insensitive order
     recipes = Recipe.objects.all()
     return render(request, "recipe_list.html", {'recipes': recipes})
 
@@ -70,7 +78,8 @@ def recipe_create(request):
     if request.method == 'POST':
         form = RecipeForm(request.POST)
         if form.is_valid():
-            recipe = form.save(commit=True)
+# don't save yet -- wait for author assignment
+            recipe = form.save(commit=False)
             recipe.author = request.user
             recipe.save()
             return redirect('recipe_list')

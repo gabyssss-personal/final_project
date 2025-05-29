@@ -1,6 +1,44 @@
-<h1>Create / Edit Recipe</h1>
-<form method="post">
+<h1 style="  text-align: left;
+  font-size: 2.5 em;
+  background-color: #999999
+  margin-bottom: 0px;
+  color: #ffff;
+  text-align: left;
+  padding-bottom: 20 px;
+  padding: 20px 40px;
+    width: 100%;          /* scales on smaller screens */
+    margin: 0 auto;      /* centers the container */
+    padding: 20 px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    border-radius: 0;
+    background-color: #999999;  /* Solid background inside the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    text-align: left;">Create / Edit Recipe</h1>
+
+<body style="background-color: #f5f5dc;">
+
+
+<form method="post" style="
+    background-color: #fff;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 40px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Save</button>
+
+    <button  style="
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  " type="submit">Save</button>
 </form>
