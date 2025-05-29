@@ -82,7 +82,7 @@ http://127.0.0.1:8000/
 
 ## 🖌 Styling
 
-This app uses custom CSS with the following aesthetic:
+This app uses custom HTLM inline with the following aesthetic:
 
 - **Background**: Light ecru (`#f5f5dc`)
 - **Containers**: White boxes with subtle shadows
@@ -90,8 +90,6 @@ This app uses custom CSS with the following aesthetic:
 - **Typography**: Left-aligned, padded, modern font sizes
 - **Buttons**: Styled with hover transitions
 
-CSS file location:
-static/css/styles.css
 
 ---
 
