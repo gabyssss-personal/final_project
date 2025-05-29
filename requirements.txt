@@ -1,0 +1,6 @@
+Python 3.11.9
+Django 5.2
+Djangorestframework 3.16
+django-contrib-auth2 1.0
+django-restauth 0.95
+sqlparse 0.5.3
