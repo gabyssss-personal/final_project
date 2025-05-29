@@ -97,19 +97,28 @@ static/css/styles.css
 
 ## 📁 Project Structure
 
-django-recipe-app/
-├── recipes/
-│   ├── templates/
-│   │   └── recipes/
-│   │       ├── home.html
-│   │       ├── form.html
+final_project/
+├── final_project/
+│   ├── __init__.py
+│   ├── commit.py.py
+│   ├── forms.py
 │   ├── models.py
+│   ├── settings.py
+│   ├── test.py
 │   ├── views.py
 │   ├── urls.py
+│   ├── wsgi.py
 ├── db.sqlite3
 ├── manage.py
 ├── requirements.txt
 └── README.md
+│   |  ├── templates/
+│   │       ├── home.html
+│   │       ├── base.html
+│   │       ├── login.html
+│   │       ├── recipe_form.html
+│   │       ├── recipe_list.html
+│   │       ├── register.html
 
 ---
 
